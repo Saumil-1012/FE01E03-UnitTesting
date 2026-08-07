@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SpellBookTest {
 
+
     // TODO: Implement testSuccessfulCastSameSchool()
     @Test
     void testSuccessfulCastSameSchool() {

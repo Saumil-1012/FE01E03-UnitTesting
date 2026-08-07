@@ -3,6 +3,8 @@ package de.tum.ise;
 public class SpellBook {
 
     private int mana;
+
+
     private final SpellSchool school;
     private final int intellect;
 
@@ -26,6 +28,7 @@ public class SpellBook {
 
     public CastResult castSpell(SpellSchool spellSchool, int baseManaCost) {
         // TODO: Implement this method
+
         return null;
     }
 
