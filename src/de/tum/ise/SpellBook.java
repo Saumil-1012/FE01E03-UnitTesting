@@ -27,13 +27,26 @@ public class SpellBook {
     }
 
     public CastResult castSpell(SpellSchool spellSchool, int baseManaCost) {
-        // TODO: Implement this method
+        boolean sameSchool = spellSchool == school;
+        int actualManaCost = sameSchool ? baseManaCost : baseManaCost * 2;
 
-        return null;
+        if (mana < actualManaCost) {
+            return new CastResult(false, 0.0, 0);   // mana NOT modified
+        }
+
+        mana -= actualManaCost;
+        double damageDealt = sameSchool
+                ? baseManaCost * intellect * 1.5
+                : baseManaCost * intellect;
+        return new CastResult(true, damageDealt, actualManaCost);
     }
 
     public int rechargeMana(int amount) {
-        // TODO: Implement this method
-        return 0;
+        if (amount <= 0) {
+            return mana;
+        }
+        int cap = intellect * 10;
+        mana = Math.min(mana + amount, cap);
+        return mana;
     }
 }
